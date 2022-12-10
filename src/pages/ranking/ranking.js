@@ -3,9 +3,12 @@ import ListBook from './book.json';
 import { ItemBook } from './itemBook';
 import { FirstItemBook } from './firstItemBook';
 import './ranking.css';
-
+import { getAllPost } from '../../api/main'
 
 const ranking = () => {
+
+    getAllPost();
+    
     return (
         <div className=''>
              <img alt="Thumbnail" src={require("../../assets/banner_ranking.png")} class="w-screen " />
