@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ListBook from './book.json';
 import { ItemBook } from './itemBook';
 import { FirstItemBook } from './firstItemBook';
 import './ranking.css';
-import { getAllPost } from '../../api/main'
+import { getAllPost } from '../../api/main';
 
-const ranking = () => {
+const Ranking = () => {
+    const [ dataListBook, setDataListBook ] = useState(null);
 
-    getAllPost();
-    
+    useEffect(()=>{
+        getAllPost(setDataListBook);
+       
+    },[])
+  
+
+  
+    console.log("data ", dataListBook);
     return (
         <div className=''>
              <img alt="Thumbnail" src={require("../../assets/banner_ranking.png")} class="w-screen " />
              <h1 className='text-primary font-bold  text-3xl text-center my-10 underline'>SÁCH BÌNH CHỌN HAY NHẤT</h1>
              <div className='flex flex-wrap mx-10 '>
             {
-                ListBook && ListBook.map((value,index)=>{
+                dataListBook && dataListBook.map((value,index)=>{
                     return (
                         <>
                             {
@@ -36,4 +43,4 @@ const ranking = () => {
     );
 };
 
-export default ranking;
+export default Ranking;

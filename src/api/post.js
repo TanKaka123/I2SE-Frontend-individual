@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { api, postApi } from '../constant/api';
 
-const getAllPost=()=>{
+const getAllPost=(setResult)=>{
  
     axios.get(`${api}${postApi}`)
     .then((res)=>{
-        console.log("data ->",res.data.data)
+  
+        setResult(res.data.data)
     })
     .catch((err)=>{
         console.log("err : ",err)
