@@ -4,6 +4,7 @@ import { ItemBook } from './itemBook';
 import { FirstItemBook } from './firstItemBook';
 import './ranking.css';
 import { getAllPost } from '../../api/main';
+import Footer from '../../layout/footer/footer'
 
 const Ranking = () => {
     const [ dataListBook, setDataListBook ] = useState(null);
@@ -39,6 +40,7 @@ const Ranking = () => {
                 })
             }
             </div>
+            <Footer/>
         </div>
     );
 };
