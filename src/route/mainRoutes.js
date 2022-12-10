@@ -11,6 +11,7 @@ const mainRoutes = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/dadas" element={<Home />} />
           <Route path="Home" element={<Home />} />
           <Route path="LogIn" element={<LogIn />} />
           <Route path="SignUp" element={<SignUp />} />
